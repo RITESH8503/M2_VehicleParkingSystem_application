@@ -4,10 +4,10 @@
 
 
 package Implementation.SRC;
-import java.io.Serializable;
 
-@SuppressWarnings("serial")
-public class Van extends Vehicle implements Serializable {
+
+
+public class Van extends Vehicle  {
 
 	private double cargoVolume;
 
@@ -19,7 +19,7 @@ public class Van extends Vehicle implements Serializable {
 	public Van(String vehicleId, String vehicleBrand, double cargoVolume) {
 		super(vehicleId, vehicleBrand);
 		this.cargoVolume = cargoVolume;
-		this.type = "Van";
+		//this.type = "Van";
 	}
 	
 	//getter for cargo volume
