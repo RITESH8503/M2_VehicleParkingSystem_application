@@ -1,3 +1,5 @@
+
+
 package Implementation.SRC;
 
 
@@ -18,7 +20,7 @@ public class MainClass implements Serializable {
 
 	public static void main(String[] a) throws IOException {
 
-		WestminsterCarParkManager parkingSys = new WestminsterCarParkManager();
+		VehicleDetails parkingSys = new VehicleDetails();
 
 		// load array list from file
 		ArrayList<Vehicle> list1 = deserializeList();
@@ -78,13 +80,13 @@ public class MainClass implements Serializable {
 								case "2":
 									System.out.print("Add Cargo Volume: ");
 									double cargoVolume = sc.nextDouble();
-									v = new Van(idPlate, brand, cargoVolume);
+									v = new HeavyVehicle (idPlate, brand, cargoVolume);
 									isAdded = true;
 									break;
 								case "3":
 									System.out.print("Add Engine Size: ");
 									int engineSize = sc.nextInt();
-									v = new Motorbike(idPlate, brand, engineSize);
+									v = new Bike(idPlate, brand, engineSize);
 									isAdded = true;
 									break;
 								default:
