@@ -2,27 +2,26 @@ package Implementation.SRC;
 
 
 
-//import com.java.core.Vehicle;
-//import com.java.util.EntryDateTime;
+
 
 import java.util.ArrayList;
 
-public class WestminsterCarParkManager implements CarParkManager {
+public class VehicleDetails implements CarParkManager {
 
 	// size of car park slots
-	private static int numberOfSlots = 20;
+	private static int totalSlots = 50;
 	Vehicle[] slots;
 
 	// stack array list
-	private static ArrayList<Vehicle> list = new ArrayList<Vehicle>(numberOfSlots);
+	private static ArrayList<Vehicle> list = new ArrayList<Vehicle>(totalSlots);
 
 	// no of occupied slots in the park
 	private int occupiedSlots = 0;
 
 	// constructor
-	public WestminsterCarParkManager() {
+	public VehicleDetails() {
 		// vehicle array for no of car park slots
-		slots = new Vehicle[numberOfSlots];
+		slots = new Vehicle[totalSlots];
 	}
 
 	// method to add a vehicle
@@ -32,7 +31,7 @@ public class WestminsterCarParkManager implements CarParkManager {
 		if (slot == -2) {// for a van
 			System.out.println("\nSorry, not enough space");
 			// get free slots
-			return numberOfSlots - occupiedSlots;
+			return totalSlots - occupiedSlots;
 		} else if (slot == -1) { // when there are no free slots
 			System.out.println("\nPark is Full");
 			return 0;
@@ -42,15 +41,15 @@ public class WestminsterCarParkManager implements CarParkManager {
 			list.add(v);
 
 			// to display what type was added
-			System.out.println("\n" + v.getType() + " is Successfully Added");
+			System.out.println("\r" + v.getType() + " is Successfully Added");
 			// get free slots
-			return numberOfSlots - occupiedSlots;
+			return totalSlots - occupiedSlots;
 		}
 
 	}
 
 	// method to remove a vehicle
-	@Override
+	
 	public Vehicle deleteVehicle(String vehicleId) {
 		for (int x = 0; x < slots.length; x++) {
 			if (slots[x] != null) {
@@ -114,7 +113,7 @@ public class WestminsterCarParkManager implements CarParkManager {
 								occupiedSlots++;
 								return x;
 							case "Van":
-								if (x + 1 < numberOfSlots && slots[x + 1] == null) {
+								if (x + 1 < totalSlots && slots[x + 1] == null) {
 									occupiedSlots += 2;
 									return x;
 								} else {
@@ -129,7 +128,7 @@ public class WestminsterCarParkManager implements CarParkManager {
 							occupiedSlots++;
 							return x;
 						case "Van":
-							if ((x + 1) < (numberOfSlots - 1)) {
+							if ((x + 1) < (totalSlots - 1)) {
 								if (slots[x + 1] == null) {
 									occupiedSlots += 2;
 									return x;
@@ -146,7 +145,7 @@ public class WestminsterCarParkManager implements CarParkManager {
 	}
 
 	// method to get the current parked list
-	@Override
+	
 	public void printCurrentParked() {
 		if (!isEmpty()) {
 			System.out.println("\nCurrently parked vehicles\n");
@@ -217,7 +216,7 @@ public class WestminsterCarParkManager implements CarParkManager {
 	}
 
 	// method to get the charge for all parked vehicles
-	@Override
+
 	public void chargeForAllParked() {
 		for (int x = 0; x < slots.length; x++) {
 			if (slots[x] != null) {
@@ -228,7 +227,7 @@ public class WestminsterCarParkManager implements CarParkManager {
 	}
 
 	// method to get the charge for parking
-	@Override
+	
 	public void chargeForPark(Vehicle vehicle) {
 		EntryDateTime currTime = new EntryDateTime();
 		long hours = currTime.getEpochTimeHours() - vehicle.getVehicleEntryTime().getEpochTimeHours();

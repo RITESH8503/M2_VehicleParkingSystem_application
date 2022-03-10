@@ -4,19 +4,19 @@ package Implementation.SRC;
 
 
 
-public class Motorbike extends Vehicle {
+public class Bike extends Vehicle {
 	private int engineSize;
 
 	//default constructor
-	public Motorbike() {
+	public Bike() {
 		super();
 	}
 
 	//constructor
-	public Motorbike(String vehicleId, String vehicleBrand, int engineSize) {
+	public Bike(String vehicleId, String vehicleBrand, int engineSize) {
 		super(vehicleId, vehicleBrand);
 		this.engineSize = engineSize;
-		this.type = "Motorbike";
+		this.type = "Bike";
 	}
 
 	//getter for engine size

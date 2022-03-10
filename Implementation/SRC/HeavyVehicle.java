@@ -7,19 +7,19 @@ package Implementation.SRC;
 
 
 
-public class Van extends Vehicle  {
+public class HeavyVehicle extends Vehicle  {
 
 	private double cargoVolume;
 
-	public Van() {
+	public HeavyVehicle() {
 		super();
 	}
 
 	//constructor
-	public Van(String vehicleId, String vehicleBrand, double cargoVolume) {
+	public HeavyVehicle(String vehicleId, String vehicleBrand, double cargoVolume) {
 		super(vehicleId, vehicleBrand);
 		this.cargoVolume = cargoVolume;
-		//this.type = "Van";
+		this.type = "HeavyVehicle";
 	}
 	
 	//getter for cargo volume
