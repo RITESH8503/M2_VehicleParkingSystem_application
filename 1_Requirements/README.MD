@@ -44,7 +44,7 @@ SWOT ANALYSIS:
 
 HIGH LEVEL REQUIREMENT
 |ID	  |   Description	                                                                    |  Status      |
-|-----|-------------------------------------------------------------------------------------|              |
+|-----|-------------------------------------------------------------------------------------|--------------|
 |HL01 |  	admin must be able to view the information of all registered parking areas.     |  Implemented |
 |HL02 | 	Calculates electricity bill at urban areas	                                    |  Implemented |
 |HL03 |   Calculates electricity bill at industrial areas	                                |  Implemented |
