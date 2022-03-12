@@ -14,7 +14,7 @@ Java Compiler
 Github (to push the code)
 VS CODE
 
-
+--------------------------------------------------------------------------------------------------------------------
 SWOT ANALYSIS:
 
 1.STRENGTH
@@ -49,7 +49,7 @@ HIGH LEVEL REQUIREMENT
 |HL02 | 	admin must be able to view the information of all parked vehicle                |  Implemented |
 |HL03 |     admin must be able to add vehicle delete vehicle                                |  Implemented |
 |HL04 |     check for empty slot	                                                        |  Implemented |
-|     |     Entry exit date and time record                                                 |  Implemented 
+|HL05 |     Entry exit date and time record                                                 |  Implemented 
                                                                            |
 
 
