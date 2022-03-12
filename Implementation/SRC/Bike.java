@@ -16,7 +16,7 @@ public class Bike extends Vehicle {
 	public Bike(String vehicleId, String vehicleBrand, int engineSize) {
 		super(vehicleId, vehicleBrand);
 		this.engineSize = engineSize;
-		this.type = "Bike";
+		//this.type = "Bike";
 	}
 
 	//getter for engine size

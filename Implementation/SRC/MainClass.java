@@ -20,7 +20,7 @@ public class MainClass implements Serializable {
 
 	public static void main(String[] a) throws IOException {
 
-		VehicleDetails parkingSys = new VehicleDetails();
+		VehicleDetails parkingsys = new VehicleDetails();
 
 		// load array list from file
 		ArrayList<Vehicle> list1 = deserializeList();
@@ -45,13 +45,13 @@ public class MainClass implements Serializable {
 				// add vehicles
 				case "A":
 					// check if park is full
-					if (!parkingSys.isFull()) {
+					if (!parkingsys.isFull()) {
 						System.out.print("Enter vehicle ID : ");
 						String s = sc.next();
 						String idPlate = validateInput(s);
 
 						// check whether ID is already there
-						if (parkingSys.containsID(idPlate)) {
+						if (parkingsys.containsID(idPlate)) {
 							System.out.print("\nVehicle ID already exists\n");
 							break;
 						}
@@ -102,7 +102,7 @@ public class MainClass implements Serializable {
 						int temp = freeSlots;
 
 						// to get free slots
-						freeSlots = parkingSys.addVehicle(v);
+						freeSlots = parkingsys.addVehicle(v);
 
 						// add vehicle to list if successfully added to park
 						if (temp != freeSlots) {
@@ -120,12 +120,12 @@ public class MainClass implements Serializable {
 					break;
 				// remove vehicles
 				case "D":
-					if (!parkingSys.isEmpty()) {
+					if (!parkingsys.isEmpty()) {
 						System.out.print("Enter Plate number : ");
 						String idPlate1 = sc.next();
-						v = parkingSys.deleteVehicle(idPlate1);
+						v = parkingsys.deleteVehicle(idPlate1);
 						if (v != null) {
-							parkingSys.chargeForPark(v);
+							parkingsys.chargeForPark(v);
 						}
 					} else {
 						System.out.println("\nPark is empty!\n"); //empty
@@ -133,11 +133,11 @@ public class MainClass implements Serializable {
 					break;
 				// print current parked vehicles
 				case "P":
-					parkingSys.printCurrentParked();
+					parkingsys.printCurrentParked();
 					break;
 				// print the vehicle statistics
 				case "S":
-					parkingSys.printStatistics();
+					parkingsys.printStatistics();
 					break;
 				// list of vehicles on a selected date
 				case "L":
@@ -147,8 +147,8 @@ public class MainClass implements Serializable {
 					break;
 				// charge for all the vehicles parked
 				case "C":
-					if (!parkingSys.isEmpty()) {
-						parkingSys.chargeForAllParked();
+					if (!parkingsys.isEmpty()) {
+						parkingsys.chargeForAllParked();
 					} else {
 						System.out.println("\nPark is empty!\n");
 					}
