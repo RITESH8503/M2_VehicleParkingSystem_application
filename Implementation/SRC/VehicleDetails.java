@@ -167,7 +167,7 @@ public class VehicleDetails implements CarParkManager {
 	public void printStatistics() {
 		if (!isEmpty()) {
 			int car = 0;
-			int van = 0;
+			int HeavyVehicle = 0;
 			int Bike = 0;
 			int total = 0;
 
@@ -178,7 +178,7 @@ public class VehicleDetails implements CarParkManager {
 						car++;
 					}
 					if (slots[x].getType().equals("HeavyVehicle")) {
-						van++;
+						HeavyVehicle++;
 					}
 					if (slots[x].getType().equals("Bike")) {
 						Bike++;
@@ -189,7 +189,7 @@ public class VehicleDetails implements CarParkManager {
 
 			
 			double carP = ((double) car / (double) total) * 100.0;
-			double vanP = ((double) van / (double) total) * 100.0;
+			double HeavyVehicleP = ((double) HeavyVehicle / (double) total) * 100.0;
 			double BikeP = ((double) Bike / (double) total) * 100.0;
 
 			
@@ -199,7 +199,7 @@ public class VehicleDetails implements CarParkManager {
 
 			System.out.println("\nCurrent parking percentages");
 			System.out.println("Cars : " + (int) carP + "%");
-			System.out.println("Vans : " + (int) vanP + "%");
+			System.out.println("HeavyVehicles : " + (int) HeavyVehicleP + "%");
 			System.out.println("Bikes : " + (int) BikeP + "%\n");
 
 			System.out.println("Longest parked vehicle");
@@ -207,12 +207,12 @@ public class VehicleDetails implements CarParkManager {
 
 			System.out.println("Last Parked vehicle");
 			lastParked.display();
-		} else { // no vehicles in the park
+		} else { 
 			System.out.println("\nNo Vehicles are parked!\n");
 		}
 	}
 
-	// method to get the charge for all parked vehicles
+
 
 	public void chargeForAllParked() {
 		for (int x = 0; x < slots.length; x++) {
@@ -223,63 +223,63 @@ public class VehicleDetails implements CarParkManager {
 		}
 	}
 
-	// method to get the charge for parking
+	
 	
 	public void chargeForPark(Vehicle vehicle) {
 		EntryDateTime currTime = new EntryDateTime();
 		long hours = currTime.getEpochTimeHours() - vehicle.getVehicleEntryTime().getEpochTimeHours();
 		System.out.print("No of hours parked " + hours);
 
-		int parkingCharge = 0;
+		int parking_charge = 0;
 
-		// if less than 3 hours
+		
 		if (hours == 0) {
-			parkingCharge = 3;
+			parking_charge = 100;
 		} else if (hours <= 3) {
-			parkingCharge = 3 * (int) hours;
-		} else { // if less than 24 hours
-			parkingCharge = 9 + ((int) hours - 3);
+			parking_charge = 100 * (int) hours;
+		} else { 
+			parking_charge = 500 + ((int) hours - 3);
 		}
 
-		System.out.println("\nCharge is €" + parkingCharge +"\n");
+		System.out.println("\nCharge is rupees" + parking_charge +"\n");
 
 	}
 
-	// validation if park is empty
+	
 	public boolean isEmpty() {
 		int emptyCount = 0;
 
 		for (int x = 0; x < slots.length; x++) {
 			if (slots[x] == null) {
-				emptyCount++; // if slot is empty bump
+				emptyCount++; 
 			}
 		}
 		return emptyCount == slots.length;
 	}
 
-	// validation if park is full
+	
 	public boolean isFull() {
-		int fullCount = 0;
+		int fullcount = 0;
 
 		for (int x = 0; x < slots.length; x++) {
 			if (slots[x] == null) {
-				// does not work if use !=null for some reason
+			
 			} else {
 				if (slots[x].getType().equals("HeavyVehicle")) {
-					fullCount += 2; // if its a van bump 2
+					fullcount += 2;
 				} else {
-					fullCount++; // car, bike bump 1
+					fullcount++; 
 				}
 			}
 		}
-		return fullCount == slots.length;
+		return fullcount == slots.length;
 	}
 
-	// validation for same ID plate is in the park
-	public boolean containsID(String idPlate) {
+	
+	public boolean containsID(String id_plate) {
 		for (int x = 0; x < slots.length; x++) {
 			if (slots[x] != null) {
-				if (slots[x].getVehicleId().equals(idPlate)) {
+				if (slots[x].getVehicleId().equals(id_plate)) {
 					return true;
 				}
 			}
