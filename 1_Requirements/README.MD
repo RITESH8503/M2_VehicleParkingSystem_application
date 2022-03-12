@@ -39,6 +39,19 @@ VS CODE
 4. THREAT
  * New competitors are likely to provide same service in other cities
  * LAND AREA ARE DIFFICULT TO AQUIRE IN CASE OF EXPANSION
+-----------------------------------------------------------------------------------------------------------------
+
+4’W and 1’H
+|What: VEHICLE PARKING MANAGEMENT SYSTEM**|
+
+|Where: CITY, TOWN, MALL, SHOPPING COMPLEX, THEATRE|
+
+|When: IF VEHICLE LOAD IS MORE AND AREA IS LEESS.FOR OPTIMAL USE OF AREA.|
+|WHY: FOR OPTIMAL USE OF AREA, FOR SAFETY OF VEHICLE FROM THEFT|
+
+|How: CHECK FREE SPACE THEN ASSIGN SLOT|.
+
+
 
 --------------------------------------------------------------------------------------------------------------------
 
