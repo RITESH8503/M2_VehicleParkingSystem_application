@@ -47,7 +47,7 @@ HIGH LEVEL REQUIREMENT
 
                                                                            |
 | ID	| Description	 |    |                                                       |  Status     |
-|-----|--------------|----|-------------------------------------------------------------|
+|-----|--------|-----|----|-----------------------------------------------|-------------|
 | HL01|PARKING | calculation at Urban areas if(units<30)	              | Implemented |
 | HL02|PARKING |calculation at Urban areas if(units>30 && units <100)	  |Implemented  |  
 | HL03|PARKING | calculation at Urban areas if(units>101 && units <200)   |	Implemented |
