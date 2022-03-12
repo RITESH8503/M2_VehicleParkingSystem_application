@@ -20,22 +20,21 @@ public class Car extends Vehicle {
 		//this.type = "Car";
 	}
 
-	//getter for doors
 	public int getNumberOfDoors() {
 		return number_of_doors;
 	}
 
-	//setter for doors
+
 	public void setNumberOfDoors(int numberOfDoors) {
 		this.number_of_doors = numberOfDoors;
 	}
 
-	//getter for color
+	
 	public String getCarColor() {
 		return car_color;
 	}
 
-	//setter for color
+	
 	public void setCarColor(String carColor) {
 		this.car_color = carColor;
 	}
