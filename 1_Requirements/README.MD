@@ -42,11 +42,13 @@ VS CODE
 -----------------------------------------------------------------------------------------------------------------
 
 4’W and 1’H
+
 |What: VEHICLE PARKING MANAGEMENT SYSTEM**|
 
 |Where: CITY, TOWN, MALL, SHOPPING COMPLEX, THEATRE|
 
 |When: IF VEHICLE LOAD IS MORE AND AREA IS LEESS.FOR OPTIMAL USE OF AREA.|
+
 |WHY: FOR OPTIMAL USE OF AREA, FOR SAFETY OF VEHICLE FROM THEFT|
 
 |How: CHECK FREE SPACE THEN ASSIGN SLOT|.
