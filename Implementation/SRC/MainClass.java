@@ -31,9 +31,9 @@ public class MainClass implements Serializable {
 		// get input procedure
 		while (!selection.equals("X")) {
 			System.out.println("~ Welcome to  Car Park ~" + "\nPress desired key to continue "
-					+ "\n(A)Add Vehicle" + "\n(D)elete vehicle" + "\n(P)rint current list of vehicles"
-					+ "\n(S)tatistics of vehicles" + "\n(L)ist parkings on a selected day" 
-					+ "\n(C)harge for all parked" + "\n(X) to Exit");
+					+ "\n(A)Add Vehicle" + "\nDelete vehicle" + "\nPrint current list of vehicles"
+					+ "\nStatistics of vehicles" + "\nList parkings on a selected day" 
+					+ "\nCharge for all parked" + "\n(X) to Exit");
 
 			System.out.print("Enter a procedure : ");
 			selection = sc.next().toUpperCase();
