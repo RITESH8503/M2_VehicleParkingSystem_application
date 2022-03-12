@@ -51,7 +51,7 @@ public class MainClass implements Serializable {
 						String id_plate = validateInput(s);
 
 						
-						if (parkingsys.containsID(id_plate)) {
+						if (parkingsys.contains_id(id_plate)) {
 							System.out.print("\nVehicle ID already exists\n");
 							break;
 						}
