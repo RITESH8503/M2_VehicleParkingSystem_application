@@ -8,42 +8,42 @@ import java.util.ArrayList;
 
 public class VehicleDetails implements CarParkManager {
 
-	// size of car park slots
-	private static int totalSlots = 50;
+	
+	private static int total_slots = 50;
 	Vehicle[] slots;
 
-	// stack array list
-	private static ArrayList<Vehicle> list = new ArrayList<Vehicle>(totalSlots);
+	
+	private static ArrayList<Vehicle> list = new ArrayList<Vehicle>(total_slots);
 
-	// no of occupied slots in the park
+	
 	private int occupiedSlots = 0;
 
-	// constructor
+	
 	public VehicleDetails() {
-		// vehicle array for no of car park slots
-		slots = new Vehicle[totalSlots];
+		
+		slots = new Vehicle[total_slots];
 	}
 
-	// method to add a vehicle
+
 	
 	public int addVehicle(Vehicle v) {
 		int slot = getFreeSlotForParking(v.getType());
-		if (slot == -2) {// for a van
+		if (slot == -2) {
 			System.out.println("\nSorry, not enough space");
 			// get free slots
-			return totalSlots - occupiedSlots;
-		} else if (slot == -1) { // when there are no free slots
+			return total_slots - occupiedSlots;
+		} else if (slot == -1) { 
 			System.out.println("\nPark is Full");
 			return 0;
-		} else { // to add the vehicle and set the entry time
+		} else { 
 			v.setVehicleEntryTime(new EntryDateTime());
 			slots[slot] = v;
 			list.add(v);
 
-			// to display what type was added
+		
 			System.out.println("\r" + v.getType() + " is Successfully Added");
-			// get free slots
-			return totalSlots - occupiedSlots;
+			
+			return total_slots - occupiedSlots;
 		}
 
 	}
@@ -56,21 +56,21 @@ public class VehicleDetails implements CarParkManager {
 				if (slots[x].getVehicleId().equals(vehicleId)) {
 					System.out.println("\nVehicle Id " + slots[x].getVehicleId() + " removed!");
 					System.out.println("Vehicle Type " + slots[x].getType() + " removed!");
-					// for van
-					if (slots[x].getType().equals("Van")) {
+				
+					if (slots[x].getType().equals("HeavyVehicle")) {
 						occupiedSlots = occupiedSlots - 2;
-					} else { // for car and bike
+					} else { 
 						occupiedSlots--;
 					}
 
-					// remove from list in the stack
+					
 					for (int y = 0; y < list.size(); y++) {
 						if (list.get(y).getVehicleId().equals(vehicleId)) {
 							list.remove(y);
 							break;
 						}
 					}
-					// deleting the vehicle
+					
 					Vehicle v = slots[x];
 					v = slots[x];
 					slots[x] = null;
@@ -78,7 +78,7 @@ public class VehicleDetails implements CarParkManager {
 				}
 			}
 		}
-		// when the id plate can't be found
+		
 		System.out.println("\nVehicle not found!\n");
 		return null;
 	}
@@ -86,15 +86,15 @@ public class VehicleDetails implements CarParkManager {
 	// method to allocate slots for the parking vehicles
 	public int getFreeSlotForParking(String type) {
 		for (int x = 0; x < slots.length; x++) {
-			// check for empty space
+			
 			if (slots[x] == null) {
-				if (x == 0) { // check if it is first iteration
+				if (x == 0) { 
 					switch (type) {
 					case "Car":
-					case "Motorbike":
+					case "Bike":
 						occupiedSlots++;
 						return x;
-					case "Van":
+					case "HeavyVehicle":
 						if (slots[x + 1] == null) {
 							occupiedSlots += 2;
 							return x;
@@ -102,49 +102,48 @@ public class VehicleDetails implements CarParkManager {
 							return -2;
 						}
 					}
-				} else { // if not first iteration
-					// check whether previous slot is empty
+				} else { 
 					if (slots[x - 1] != null) {
-						// check whether previous vehicle is a van
-						if (!slots[x - 1].getType().equals("Van")) {
+						
+						if (!slots[x - 1].getType().equals("HeavyVehicle")) {
 							switch (type) {
 							case "Car":
-							case "Motorbike":
+							case "Bike":
 								occupiedSlots++;
 								return x;
-							case "Van":
-								if (x + 1 < totalSlots && slots[x + 1] == null) {
+							case "HeavyVehicle":
+								if (x + 1 < total_slots && slots[x + 1] == null) {
 									occupiedSlots += 2;
 									return x;
 								} else {
 									return -2; // not enough space
 								}
 							}
-						} // if previous vehicle == van don't do anything
-					} else { // if previous slot is empty
+						} 
+					} else { 
 						switch (type) {
 						case "Car":
-						case "Motorbike":
+						case "Bike":
 							occupiedSlots++;
 							return x;
-						case "Van":
-							if ((x + 1) < (totalSlots - 1)) {
+						case "HeavyVehicle":
+							if ((x + 1) < (total_slots - 1)) {
 								if (slots[x + 1] == null) {
 									occupiedSlots += 2;
 									return x;
 								}
 							} else {
-								return -2; // not enough space
+								return -2; 
 							}
 						}
 					}
 				}
 			}
 		}
-		return -1; // park is full/no free slots available
+		return -1; 
 	}
 
-	// method to get the current parked list
+	
 	
 	public void printCurrentParked() {
 		if (!isEmpty()) {
@@ -152,58 +151,56 @@ public class VehicleDetails implements CarParkManager {
 
 			for (int x = list.size() - 1; x >= 0; x--) {
 				if (list.get(x) != null) {
-					// to get the element in an index in the array list
+					
 					Vehicle v = list.get(x);
-					// calling the display method in vehicle class
+					
 					v.display();
 				}
 			}
-		} else { // no vehicles in the park
+		} else { 
 			System.out.println("\nNo Vehicles are parked!\n");
 		}
 	}
 
-	// method to print the statistics
+	
 	
 	public void printStatistics() {
 		if (!isEmpty()) {
 			int car = 0;
 			int van = 0;
-			int motorbike = 0;
+			int Bike = 0;
 			int total = 0;
 
-			// to calculate the percentage of each vehicle type
+			
 			for (int x = 0; x < slots.length; x++) {
 				if (slots[x] != null) {
 					if (slots[x].getType().equals("Car")) {
 						car++;
 					}
-					if (slots[x].getType().equals("Van")) {
+					if (slots[x].getType().equals("HeavyVehicle")) {
 						van++;
 					}
-					if (slots[x].getType().equals("Motorbike")) {
-						motorbike++;
+					if (slots[x].getType().equals("Bike")) {
+						Bike++;
 					}
 					total++;
 				}
 			}
 
-			// calculating percentages
+			
 			double carP = ((double) car / (double) total) * 100.0;
 			double vanP = ((double) van / (double) total) * 100.0;
-			double motorbikeP = ((double) motorbike / (double) total) * 100.0;
+			double BikeP = ((double) Bike / (double) total) * 100.0;
 
-			// to show the longest parked vehicle and the last vehicle parked
-
-			// longest parked is always the first in the array list
+			
 			Vehicle longestParked = list.get(0);
-			// last parked is always the last in the array list
+		
 			Vehicle lastParked = list.get(list.size() - 1);
 
 			System.out.println("\nCurrent parking percentages");
 			System.out.println("Cars : " + (int) carP + "%");
 			System.out.println("Vans : " + (int) vanP + "%");
-			System.out.println("Motorbikes : " + (int) motorbikeP + "%\n");
+			System.out.println("Bikes : " + (int) BikeP + "%\n");
 
 			System.out.println("Longest parked vehicle");
 			longestParked.display();
@@ -268,7 +265,7 @@ public class VehicleDetails implements CarParkManager {
 			if (slots[x] == null) {
 				// does not work if use !=null for some reason
 			} else {
-				if (slots[x].getType().equals("Van")) {
+				if (slots[x].getType().equals("HeavyVehicle")) {
 					fullCount += 2; // if its a van bump 2
 				} else {
 					fullCount++; // car, bike bump 1
