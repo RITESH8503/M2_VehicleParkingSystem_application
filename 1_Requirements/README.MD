@@ -43,22 +43,14 @@ SWOT ANALYSIS:
 
 
 HIGH LEVEL REQUIREMENT
-
+|ID	  |   Description	                                    |  Status      |
+|-----|---------------------------------------------------|--------------|
+|HL01 |  	Calculates electricity bill at rural areas      |  Implemented |
+|HL02 | 	Calculates electricity bill at urban areas	    |  Implemented |
+|HL03 |   Calculates electricity bill at industrial areas	|  Implemented |
+|HL04	|   Calculates electricity bill at subsidesed rate	|  Implemented |
 
                                                                            |
-| ID	| Description	 |    |                                                       |  Status     |
-|-----|--------|-----|----|-----------------------------------------------|-------------|
-| HL01|PARKING | calculation at Urban areas if(units<30)	              | Implemented |
-| HL02|PARKING |calculation at Urban areas if(units>30 && units <100)	  |Implemented  |  
-| HL03|PARKING | calculation at Urban areas if(units>101 && units <200)   |	Implemented |
-| HL04|PARKING | calculation at Urban areas if(units<200)	              | Implemented |
-| HL05|PARKING | calculation at Rural areas if(units<30)	              | Implemented |
-| HL06|PARKING | calculation at Rural areas if(units>30 && units <100)	  |Implemented  |
-| HL07|PARKING | calculation at Rural areas if(units>101 && units <200   )|	Implemented |
-| HL08|PARKING | calculation at Rural areas if(units<200)                 |	Implemented |
-| HL08|PARKING | calculation at industrial  areas .fixed price            |Implemented  |
-| HL09|PARKING | calculation at Rural areas if(units>101 && units <200)   |	Implemented |
-| HL10|PARKING | calculation at farmers subsided rate fixed price         |Implemented  | 
 
 
 
