@@ -9,27 +9,27 @@ package Implementation.SRC;
 
 public class HeavyVehicle extends Vehicle  {
 
-	private double cargoVolume;
+	private double cargovolume;
 
 	public HeavyVehicle() {
 		super();
 	}
 
-	//constructor
-	public HeavyVehicle(String vehicleId, String vehicleBrand, double cargoVolume) {
+
+	public HeavyVehicle(String vehicleId, String vehicleBrand, double cargovolume) {
 		super(vehicleId, vehicleBrand);
-		this.cargoVolume = cargoVolume;
+		this.cargovolume = cargovolume;
 		this.type = "HeavyVehicle";
 	}
 	
-	//getter for cargo volume
-	public double getCargoVolume() {
-		return cargoVolume;
+	
+	public double getCargovolume() {
+		return cargovolume;
 	}
 
-	//setter for cargo volume
-	public void setCargoVolume(double cargoVolume) {
-		this.cargoVolume = cargoVolume;
+	
+	public void setCargovolume(double cargovolume) {
+		this.cargovolume = cargovolume;
 	}
 
 }

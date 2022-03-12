@@ -14,17 +14,17 @@ public class EntryDateTime implements Serializable{
 	
 	private String datetime;
 	private LocalDateTime local;
-	private long epochTime; // to get current time in seconds from epoch
+	private long epochTime; 
 	
-	//constructor
+	
 	public EntryDateTime(){
 		datetime = init();
 	}
 	
-	// creating the date and time
+	
 	private String init(){
 		local = LocalDateTime.now();
-		epochTime = local.toEpochSecond(ZoneOffset.UTC); // current time in seconds from epoch using time zone
+		epochTime = local.toEpochSecond(ZoneOffset.UTC); 
 		
 		StringBuilder sb = new StringBuilder(64);
         sb.append(local.getYear());
@@ -46,22 +46,22 @@ public class EntryDateTime implements Serializable{
 		return epochTime / 3600L;
 	}
 	
-	//getter for date and time
+	
 	public String getDateTime(){
 		return datetime;
 	}
 	
-	//to split the date
+	
 	public String getDate(){
 		return datetime.split(" ")[0];
 	}
 	
-	//to split the time
+	
 	public String getTime(){
 		return datetime.split(" ")[1];
 	}
 	
-	//getter for local date
+	
 	public LocalDateTime getLocaldate() {
 		return local;
 	}

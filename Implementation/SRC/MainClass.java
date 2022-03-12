@@ -22,36 +22,36 @@ public class MainClass implements Serializable {
 
 		VehicleDetails parkingsys = new VehicleDetails();
 
-		// load array list from file
+	
 		ArrayList<Vehicle> list1 = deserializeList();
 		int freeSlots = 20;
 
 		String selection = "Y";
 
-		// get input procedure
+		
 		while (!selection.equals("X")) {
 			System.out.println("~ Welcome to  Car Park ~" + "\nPress desired key to continue "
-					+ "\n(A)Add Vehicle" + "\nDelete vehicle" + "\nPrint current list of vehicles"
-					+ "\nStatistics of vehicles" + "\nList parkings on a selected day" 
-					+ "\nCharge for all parked" + "\n(X) to Exit");
+			+ "\n(A)Add Vehicle" + "\n(D) Delete vehicle" + "\n(P),print current list of vehicles"
+			+ "\nStatistics of vehicles" + "\n(L)List parkings on a selected day" 
+			+ "\nCharge for all parked" + "\n(X) to Exit");
 
 			System.out.print("Enter a procedure : ");
 			selection = sc.next().toUpperCase();
 			Vehicle v = null;
 
 			try {
-				// main selection to get a procedure
+				
 				switch (selection) {
-				// add vehicles
+				
 				case "A":
-					// check if park is full
+					
 					if (!parkingsys.isFull()) {
 						System.out.print("Enter vehicle ID : ");
 						String s = sc.next();
-						String idPlate = validateInput(s);
+						String id_plate = validateInput(s);
 
-						// check whether ID is already there
-						if (parkingsys.containsID(idPlate)) {
+						
+						if (parkingsys.containsID(id_plate)) {
 							System.out.print("\nVehicle ID already exists\n");
 							break;
 						}
@@ -67,26 +67,26 @@ public class MainClass implements Serializable {
 							selection = sc.next();
 
 							try {
-								// sub section to select the type of vehicle
+							
 								switch (selection) {
 								case "1":
 									System.out.print("Add Door Count: ");
-									int numberOfDoors = sc.nextInt();
+									int number_of_door = sc.nextInt();
 									System.out.print("Add Color: ");
 									String color = sc.next();
-									v = new Car(idPlate, brand, numberOfDoors, color);
+									v = new Car(id_plate, brand, number_of_door, color);
 									isAdded = true;
 									break;
 								case "2":
 									System.out.print("Add Cargo Volume: ");
-									double cargoVolume = sc.nextDouble();
-									v = new HeavyVehicle (idPlate, brand, cargoVolume);
+									double cargovolume = sc.nextDouble();
+									v = new HeavyVehicle (id_plate, brand, cargovolume);
 									isAdded = true;
 									break;
 								case "3":
 									System.out.print("Add Engine Size: ");
-									int engineSize = sc.nextInt();
-									v = new Bike(idPlate, brand, engineSize);
+									int enginesize = sc.nextInt();
+									v = new Bike(id_plate, brand, enginesize);
 									isAdded = true;
 									break;
 								default:
@@ -101,51 +101,51 @@ public class MainClass implements Serializable {
 
 						int temp = freeSlots;
 
-						// to get free slots
+					
 						freeSlots = parkingsys.addVehicle(v);
 
-						// add vehicle to list if successfully added to park
+					
 						if (temp != freeSlots) {
-							// add to array for storing
+							
 							list1.add(v);
 						}
 
 						if (freeSlots >= 0) {
-							// display number of free slots;
+							
 							System.out.println("Available slots " + freeSlots + "\n");
 						}
 					} else {
-						System.out.println("\nPark is full!\n"); //full
+						System.out.println("\nPark is full!\n"); 
 					}
 					break;
-				// remove vehicles
+				
 				case "D":
 					if (!parkingsys.isEmpty()) {
 						System.out.print("Enter Plate number : ");
-						String idPlate1 = sc.next();
-						v = parkingsys.deleteVehicle(idPlate1);
+						String id_plate1 = sc.next();
+						v = parkingsys.deleteVehicle(id_plate1);
 						if (v != null) {
 							parkingsys.chargeForPark(v);
 						}
 					} else {
-						System.out.println("\nPark is empty!\n"); //empty
+						System.out.println("\nPark is empty!\n"); 
 					}
 					break;
-				// print current parked vehicles
+				
 				case "P":
 					parkingsys.printCurrentParked();
 					break;
-				// print the vehicle statistics
+			
 				case "S":
 					parkingsys.printStatistics();
 					break;
-				// list of vehicles on a selected date
+				
 				case "L":
 					System.out.print("Enter date and year (yyyy-mm-dd) : ");
 					String date = sc.next();
 					printVehicleList(list1, date);
 					break;
-				// charge for all the vehicles parked
+				
 				case "C":
 					if (!parkingsys.isEmpty()) {
 						parkingsys.chargeForAllParked();
@@ -153,9 +153,9 @@ public class MainClass implements Serializable {
 						System.out.println("\nPark is empty!\n");
 					}
 					break;
-				// exit
+			
 				case "X":
-					// save array list into a file
+			
 					serializeList(list1);
 					System.out.print("Good bye!");
 					break;
@@ -171,7 +171,7 @@ public class MainClass implements Serializable {
 		sc.close();
 	}
 
-	// method list of vehicles on a specific date
+
 	private static void printVehicleList(ArrayList<Vehicle> list1, String filterDate) {
 		if (!list1.isEmpty()) {
 			boolean isPrinted = false;
@@ -193,18 +193,18 @@ public class MainClass implements Serializable {
 		}
 	}
 
-	// validation for string input
+
 	public static String validateInput(String value) {
 		boolean contain = true;
 		boolean isValid = true;
 
-		while (contain) { // to continue the loop
+		while (contain) { 
 
-			char[] ch = value.toCharArray(); // put characters to a string array
-			for (char c : ch) { // enhanced loop
+			char[] ch = value.toCharArray(); 
+			for (char c : ch) { 
 				isValid = (((c >= 'a') && (c <= 'z')) || ((c >= 'A') && (c <= 'Z')) || (c == '-')
 						|| ((c >= '0') && (c <= '9')));
-				// if input contains other characters
+				
 				if (!isValid) {
 					System.out.print("Input contains other characters. Please re-enter : ");
 					value = sc.next();
@@ -219,34 +219,32 @@ public class MainClass implements Serializable {
 
 	// write object to file
 	public static void serializeList(ArrayList<Vehicle> list) throws IOException {
-		// create a file to write
+		
 		FileOutputStream file = new FileOutputStream("data.txt");
-		// create a object output path to file
+		
 		ObjectOutputStream oos = new ObjectOutputStream(file);
-		oos.writeObject(list); // write object to file
+		oos.writeObject(list); 
 		oos.flush();
 		oos.close();
 	}
 
-	@SuppressWarnings("unchecked")
+	
 	public static ArrayList<Vehicle> deserializeList() throws IOException {
 		try {
-			// create a file to get input
+			
 			FileInputStream file = new FileInputStream("data.txt");
-			// create object input path
+			
 			ObjectInputStream ois = new ObjectInputStream(file);
 
-			// array list to get input
+	
 			ArrayList<Vehicle> list = new ArrayList<Vehicle>();
 
-			// try to read from file to list, might throw exception if empty
-			list = (ArrayList<Vehicle>) ois.readObject();
 			ois.close();
-			return list; // return the loaded list
+			return list; 
 		} catch (Exception e) {
-			// file is empty if exception is thrown
+		
 		}
-		return new ArrayList<Vehicle>(); // return empty list if file is empty
+		return new ArrayList<Vehicle>(); 
 	}
 
 }
