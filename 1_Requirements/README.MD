@@ -1,6 +1,6 @@
 INTRODUCTION
 
-This is a web application software for the car parking managementsystem. It allows different type of vehicles to park their vehicle safely.
+This is a  software for the car parking managementsystem. It allows different type of vehicles to park their vehicle safely. It takes vehicle details like, model brand,color plateIdetc. Displays fare for different vehicle type.
 
 --------------------------------------------------------------------------------------------------------------------
 
@@ -61,10 +61,10 @@ Low level Requirements:
 |ID	  |   Description	                                    |  Status      |
 |-----|---------------------------------------------------|--------------|
 |LL01 |  	Taking vehicle details number, chasis number    |  Implemented |
-|LL02 | 	taking user details - name, id           	    |  Implemented |
-|LL03 |   Printing Receipt for user	                        |  Implemented |
+|LL02 | 	taking user details - name, id           	       |  Implemented |
+|LL03 |   Printing Receipt for user	                      |  Implemented |
 |LL04 | Charges for different type of vehicle	            |  Implemented |
-
+|LL05 |   VEHICLE BRAND
 
 
 --------------------------------------------------------------------------------------------------------------------
