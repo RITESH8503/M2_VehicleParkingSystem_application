@@ -46,10 +46,10 @@ HIGH LEVEL REQUIREMENT
 |ID	  |   Description	                                                                    |  Status      |
 |-----|-------------------------------------------------------------------------------------|--------------|
 |HL01 |  	admin must be able to view the information of all registered parking areas.     |  Implemented |
-|HL02 | 	Calculates electricity bill at urban areas	                                    |  Implemented |
-|HL03 |   Calculates electricity bill at industrial areas	                                |  Implemented |
-|HL04 |   Calculates electricity bill at subsidesed rate	                                |  Implemented |
-
+|HL02 | 	admin must be able to view the information of all parked vehicle                |  Implemented |
+|HL03 |     admin must be able to add vehicle delete vehicle                                |  Implemented |
+|HL04 |     check for empty slot	                                                        |  Implemented |
+|     |     Entry exit date and time record                                                 |  Implemented 
                                                                            |
 
 
@@ -59,9 +59,9 @@ Low level Requirements:
 
 |ID	  |   Description	                                    |  Status      |
 |-----|---------------------------------------------------|--------------|
-|LL01 |  	Calculates electricity bill at rural areas      |  Implemented |
-|LL02 | 	Calculates electricity bill at urban areas	    |  Implemented |
-|LL03 |   Calculates electricity bill at industrial areas	|  Implemented |
+|LL01 |  	Taking vehicle details number, chasis number    |  Implemented |
+|LL02 | 	taking user details - name, id           	    |  Implemented |
+|LL03 |   Printing Receipt for user	                        |  Implemented |
 |LL04	|   Calculates electricity bill at subsidesed rate	|  Implemented |
 
 
