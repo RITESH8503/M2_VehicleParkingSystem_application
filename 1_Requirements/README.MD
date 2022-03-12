@@ -1,13 +1,14 @@
 INTRODUCTION
+
 This is a web application software for the car parking managementsystem. It allows different type of vehicles to park their vehicle safely.
 
+--------------------------------------------------------------------------------------------------------------------
 
-
-ABSTRACT
+ ABSTRACT
 
 Due to the increasing population in urban cities, there is an exponential rise in the number of vehicles which is leading to major problems leading to poor traffic management and congestion. Another major problem faced by the vehicle owners is the availability of parking space.The vehicle owner will be able to reserve a slot for his/her vehicle.
 
-
+--------------------------------------------------------------------------------------------------------------------
 
 Requirements:
 Java Compiler 
@@ -15,7 +16,7 @@ Github (to push the code)
 VS CODE
 
 --------------------------------------------------------------------------------------------------------------------
-SWOT ANALYSIS:
+ SWOT ANALYSIS:
 
 1.STRENGTH
 
@@ -39,7 +40,7 @@ SWOT ANALYSIS:
  * New competitors are likely to provide same service in other cities
  * LAND AREA ARE DIFFICULT TO AQUIRE IN CASE OF EXPANSION
 
-
+--------------------------------------------------------------------------------------------------------------------
 
 
 HIGH LEVEL REQUIREMENT
@@ -66,6 +67,6 @@ Low level Requirements:
 
 
 
-
+--------------------------------------------------------------------------------------------------------------------
 
 
