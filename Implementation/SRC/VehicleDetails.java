@@ -16,7 +16,7 @@ public class VehicleDetails implements CarParkManager {
 	private static ArrayList<Vehicle> list = new ArrayList<Vehicle>(total_slots);
 
 	
-	private int occupiedSlots = 0;
+	private int occupied_slots = 0;
 
 	
 	public VehicleDetails() {
@@ -31,7 +31,7 @@ public class VehicleDetails implements CarParkManager {
 		if (slot == -2) {
 			System.out.println("\nSorry, not enough space");
 			
-			return total_slots - occupiedSlots;
+			return total_slots - occupied_slots;
 		} else if (slot == -1) { 
 			System.out.println("\nPark is Full");
 			return 0;
@@ -43,7 +43,7 @@ public class VehicleDetails implements CarParkManager {
 		
 			System.out.println("\r" + v.getType() + " is Successfully Added");
 			
-			return total_slots - occupiedSlots;
+			return total_slots - occupied_slots;
 		}
 
 	}
@@ -58,9 +58,9 @@ public class VehicleDetails implements CarParkManager {
 					System.out.println("Vehicle Type " + slots[x].getType() + " removed!");
 				
 					if (slots[x].getType().equals("HeavyVehicle")) {
-						occupiedSlots = occupiedSlots - 2;
+						occupied_slots = occupied_slots - 2;
 					} else { 
-						occupiedSlots--;
+						occupied_slots--;
 					}
 
 					
@@ -92,11 +92,11 @@ public class VehicleDetails implements CarParkManager {
 					switch (type) {
 					case "Car":
 					case "Bike":
-						occupiedSlots++;
+						occupied_slots++;
 						return x;
 					case "HeavyVehicle":
 						if (slots[x + 1] == null) {
-							occupiedSlots += 2;
+							occupied_slots += 2;
 							return x;
 						} else {
 							return -2;
@@ -109,11 +109,11 @@ public class VehicleDetails implements CarParkManager {
 							switch (type) {
 							case "Car":
 							case "Bike":
-								occupiedSlots++;
+								occupied_slots++;
 								return x;
 							case "HeavyVehicle":
 								if (x + 1 < total_slots && slots[x + 1] == null) {
-									occupiedSlots += 2;
+									occupied_slots += 2;
 									return x;
 								} else {
 									return -2; 
@@ -124,12 +124,12 @@ public class VehicleDetails implements CarParkManager {
 						switch (type) {
 						case "Car":
 						case "Bike":
-							occupiedSlots++;
+							occupied_slots++;
 							return x;
 						case "HeavyVehicle":
 							if ((x + 1) < (total_slots - 1)) {
 								if (slots[x + 1] == null) {
-									occupiedSlots += 2;
+									occupied_slots += 2;
 									return x;
 								}
 							} else {
@@ -276,7 +276,7 @@ public class VehicleDetails implements CarParkManager {
 	}
 
 	
-	public boolean containsID(String id_plate) {
+	public boolean contains_id(String id_plate) {
 		for (int x = 0; x < slots.length; x++) {
 			if (slots[x] != null) {
 				if (slots[x].getVehicleId().equals(id_plate)) {
