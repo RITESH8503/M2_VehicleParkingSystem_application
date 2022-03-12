@@ -17,7 +17,7 @@ public class Car extends Vehicle {
 		super(vehicle_id, vehicle_brand);
 		this.number_of_doors = number_of_doors;
 		this.car_color = car_color;
-		//this.type = "Car";
+		this.type = "Car";
 	}
 
 	public int getNumberOfDoors() {

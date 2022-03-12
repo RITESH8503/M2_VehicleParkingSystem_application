@@ -2,13 +2,13 @@ package Implementation.SRC;
 
 
 
-import java.io.Serializable;
+//import java.io.Serializable;
 import java.text.DecimalFormat;
 import java.time.LocalDateTime;
 import java.time.ZoneOffset;
 
 
-public class EntryDateTime implements Serializable{
+public class EntryDateTime {  //implements Serializable
 	
 	static DecimalFormat format = new DecimalFormat("#00");
 	

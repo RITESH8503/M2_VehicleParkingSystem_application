@@ -23,8 +23,8 @@ public class MainClass implements Serializable {
 		VehicleDetails parkingsys = new VehicleDetails();
 
 	
-		ArrayList<Vehicle> list1 = deserializeList();
-		int freeSlots = 20;
+		ArrayList<Vehicle> list1 =  deserializeList();
+		int free_slots = 20;
 
 		String selection = "Y";
 
@@ -60,10 +60,10 @@ public class MainClass implements Serializable {
 						String brand = validateInput(sc.next());
 
 						selection = "1";
-						boolean isAdded = false;
+						boolean is_added = false;
 
-						while (!isAdded) {
-							System.out.print("Enter vehicle type (1.Car, 2.Van, 3.Motorbike): ");
+						while (!is_added) {
+							System.out.print("Enter vehicle type (1.Car, 2.HeavyVehicle, 3.bike): ");
 							selection = sc.next();
 
 							try {
@@ -75,19 +75,19 @@ public class MainClass implements Serializable {
 									System.out.print("Add Color: ");
 									String color = sc.next();
 									v = new Car(id_plate, brand, number_of_door, color);
-									isAdded = true;
+									is_added = true;
 									break;
 								case "2":
 									System.out.print("Add Cargo Volume: ");
 									double cargovolume = sc.nextDouble();
 									v = new HeavyVehicle (id_plate, brand, cargovolume);
-									isAdded = true;
+									is_added = true;
 									break;
 								case "3":
 									System.out.print("Add Engine Size: ");
 									int enginesize = sc.nextInt();
 									v = new Bike(id_plate, brand, enginesize);
-									isAdded = true;
+									is_added = true;
 									break;
 								default:
 									System.out.println("\nInvalid Vehicle Type! Re-enter Type\n");
@@ -99,23 +99,23 @@ public class MainClass implements Serializable {
 							}
 						}
 
-						int temp = freeSlots;
+						int temp = free_slots;
 
 					
-						freeSlots = parkingsys.addVehicle(v);
+						free_slots = parkingsys.addVehicle(v);
 
 					
-						if (temp != freeSlots) {
+						if (temp != free_slots) {
 							
 							list1.add(v);
 						}
 
-						if (freeSlots >= 0) {
+						if (free_slots >= 0) {
 							
-							System.out.println("Available slots " + freeSlots + "\n");
+							System.out.println("Available slots " + free_slots + "\n");
 						}
 					} else {
-						System.out.println("\nPark is full!\n"); 
+						System.out.println("\nParking is full!\n"); 
 					}
 					break;
 				
