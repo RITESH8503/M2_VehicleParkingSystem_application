@@ -9,6 +9,4 @@ https://api.codiga.io/project/31840/score/svg
                                     
                                     
                                     
-                                    
-                                    CODACY BADGE
-                                    https://app.codacy.com/gh/RITESH8503/M2_VehicleParkingSystem_application/dashboard
+                                
