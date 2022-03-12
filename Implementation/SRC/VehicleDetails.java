@@ -30,7 +30,7 @@ public class VehicleDetails implements CarParkManager {
 		int slot = getFreeSlotForParking(v.getType());
 		if (slot == -2) {
 			System.out.println("\nSorry, not enough space");
-			// get free slots
+			
 			return total_slots - occupiedSlots;
 		} else if (slot == -1) { 
 			System.out.println("\nPark is Full");
@@ -48,7 +48,7 @@ public class VehicleDetails implements CarParkManager {
 
 	}
 
-	// method to remove a vehicle
+
 	
 	public Vehicle deleteVehicle(String vehicleId) {
 		for (int x = 0; x < slots.length; x++) {
@@ -83,7 +83,7 @@ public class VehicleDetails implements CarParkManager {
 		return null;
 	}
 
-	// method to allocate slots for the parking vehicles
+	
 	public int getFreeSlotForParking(String type) {
 		for (int x = 0; x < slots.length; x++) {
 			
@@ -116,7 +116,7 @@ public class VehicleDetails implements CarParkManager {
 									occupiedSlots += 2;
 									return x;
 								} else {
-									return -2; // not enough space
+									return -2; 
 								}
 							}
 						} 
