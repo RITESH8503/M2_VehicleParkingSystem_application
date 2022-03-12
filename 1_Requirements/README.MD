@@ -49,8 +49,8 @@ HIGH LEVEL REQUIREMENT
 |HL02 | 	admin must be able to view the information of all parked vehicle                |  Implemented |
 |HL03 |     admin must be able to add vehicle delete vehicle                                |  Implemented |
 |HL04 |     check for empty slot	                                                        |  Implemented |
-|HL05 |     Entry exit date and time record                                                 |  Implemented 
-                                                                           |
+|HL05 |     Entry exit date and time record                                                 |  Implemented |
+|HL06 |      Admin must be able to categorise vehicle- Car,Bike,Heavyvehicle                |  Implemented |
 
 
 
@@ -62,7 +62,7 @@ Low level Requirements:
 |LL01 |  	Taking vehicle details number, chasis number    |  Implemented |
 |LL02 | 	taking user details - name, id           	    |  Implemented |
 |LL03 |   Printing Receipt for user	                        |  Implemented |
-|LL04	|   Calculates electricity bill at subsidesed rate	|  Implemented |
+|LL04 | Charges for different type of vehicle	            |  Implemented |
 
 
 
