@@ -64,7 +64,7 @@ Low level Requirements:
 |LL02 | 	taking user details - name, id           	       |  Implemented |
 |LL03 |   Printing Receipt for user	                      |  Implemented |
 |LL04 | Charges for different type of vehicle	            |  Implemented |
-
+|LL05 |   VEHICLE BRAND
 
 
 --------------------------------------------------------------------------------------------------------------------
