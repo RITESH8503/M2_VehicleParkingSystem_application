@@ -43,12 +43,12 @@ SWOT ANALYSIS:
 
 
 HIGH LEVEL REQUIREMENT
-|ID	  |   Description	                                    |  Status      |
-|-----|---------------------------------------------------|--------------|
-|HL01 |  	Calculates electricity bill at rural areas      |  Implemented |
-|HL02 | 	Calculates electricity bill at urban areas	    |  Implemented |
-|HL03 |   Calculates electricity bill at industrial areas	|  Implemented |
-|HL04	|   Calculates electricity bill at subsidesed rate	|  Implemented |
+|ID	  |   Description	                                                                    |  Status      |
+|-----|-------------------------------------------------------------------------------------|              |
+|HL01 |  	admin must be able to view the information of all registered parking areas.     |  Implemented |
+|HL02 | 	Calculates electricity bill at urban areas	                                    |  Implemented |
+|HL03 |   Calculates electricity bill at industrial areas	                                |  Implemented |
+|HL04 |   Calculates electricity bill at subsidesed rate	                                |  Implemented |
 
                                                                            |
 
@@ -63,3 +63,9 @@ Low level Requirements:
 |LL02 | 	Calculates electricity bill at urban areas	    |  Implemented |
 |LL03 |   Calculates electricity bill at industrial areas	|  Implemented |
 |LL04	|   Calculates electricity bill at subsidesed rate	|  Implemented |
+
+
+
+
+
+
